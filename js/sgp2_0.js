@@ -138,27 +138,27 @@
 		return bin;
 	}
 
-	function gp2_generate_passwd(Passwd,Len) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_generate_passwd(Passwd,Len) {
 		var i=0;
-		while(i<10||!(gp2_check_passwd(Passwd.substring(0,Len)))) {
+		while(i<10||!(IlIaMPKcenPecPanMMOKddOMcOIaIjfb_check_passwd(Passwd.substring(0,Len)))) {
 			Passwd=b64_md5(Passwd);
 			i++;
 		}
 		return Passwd.substring(0,Len);
 	}
 
-	function gp2_check_passwd(Passwd) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_check_passwd(Passwd) {
 		return (Passwd.search(/[a-z]/)===0&&Passwd.search(/[0-9]/)>0&&Passwd.search(/[A-Z]/)>0)?true:false;
 	}
 
-	function gp2_generate_hash(HashSeed) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_generate_hash(HashSeed) {
 		for(var i=0;i<=4;i++) {
 			HashSeed=hex_md5(HashSeed);
 		}
 		return HashSeed;
 	}
 
-	function gp2_validate_length(Len) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_validate_length(Len) {
 		Len=(parseInt(Len))?parseInt(Len):12;
 		if(Len<4) {
 			Len=4;
@@ -168,7 +168,7 @@
 		return Len;
 	}
 
-	function gp2_process_uri(URI,DisableTLD) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_process_uri(URI,DisableTLD) {
 
 		URI=URI.toLowerCase();
 		var HostNameIsolator=new RegExp('^(http|https|ftp|ftps|webdav|gopher|rtsp|irc|nntp|pop|imap|smtp)://([^/:]+)');
@@ -202,7 +202,7 @@
 
 	}
 
-	function gp2_genpass(Passwd,Domain,LenL,HashL,SaltL,DisableTLDL) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_genpass(Passwd,Domain,LenL,HashL,SaltL,DisableTLDL) {
 
 		Passwd=(Passwd)?unescape(Passwd):0;
 		Salt=(SaltL)?unescape(SaltL):'';
@@ -210,18 +210,18 @@
 		Hash=HashL;
 		DisableTLD=DisableTLDL;
 
-		var CurrentPosition=gp2_get_scroll_position();
+		var CurrentPosition=IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_scroll_position();
 
-		if(Target.getElementById('gp2_pass_box')) {
-			Target.getElementById('gp2_pass_box').style.right=(0-CurrentPosition[0])+'px';
-			Target.getElementById('gp2_pass_box').style.top=CurrentPosition[1]+'px';
+		if(Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_pass_box')) {
+			Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_pass_box').style.right=(0-CurrentPosition[0])+'px';
+			Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_pass_box').style.top=CurrentPosition[1]+'px';
 			alert(Snippets[0]);
 			return false;
 		}
 
 		var ScrollX=(ScrollPosition)?CurrentPosition[0]-ScrollPosition[0]:CurrentPosition[0];
 		var ScrollY=(ScrollPosition)?CurrentPosition[1]-ScrollPosition[1]:CurrentPosition[1];
-		var ScreenSize=gp2_get_window_size();
+		var ScreenSize=IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_window_size();
 		var PasswdFieldRelocate=(ScrollPosition)?false:true;
 		var PasswdFieldBlocked=false,RunAgain=false;HashVerified=false;
 		PasswdFields=[];
@@ -240,7 +240,7 @@
 						if(Visible) {
 							var PasswdFieldParent=PasswdField.parentNode;
 							while(Visible&&PasswdFieldParent&&PasswdFieldParent.nodeName.toLowerCase()!='html'&&PasswdFieldParent.nodeName.toLowerCase()!='#document') {
-								if(gp2_get_computed_style(PasswdFieldParent,'display').toLowerCase()=='none'||gp2_get_computed_style(PasswdFieldParent,'visibility').toLowerCase()=='hidden') {
+								if(IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_computed_style(PasswdFieldParent,'display').toLowerCase()=='none'||IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_computed_style(PasswdFieldParent,'visibility').toLowerCase()=='hidden') {
 									Visible=false;
 								} else {
 									PasswdFieldParent=PasswdFieldParent.parentNode;
@@ -251,10 +251,10 @@
 						if(Visible) {
 
 							var PasswdFieldType=0;
-							var PasswdFieldPosition=(PasswdFieldBlocked)?false:gp2_get_object_position(PasswdField);
+							var PasswdFieldPosition=(PasswdFieldBlocked)?false:IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_object_position(PasswdField);
 
 							if(PasswdField.value!='') {
-								if(!(PrevPasswd)&&gp2_get_computed_style(PasswdField,'background-image').replace(/\\/,'')=='url('+FieldPopData+')') {
+								if(!(PrevPasswd)&&IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_computed_style(PasswdField,'background-image').replace(/\\/,'')=='url('+FieldPopData+')') {
 									if(RunAgain||confirm(Snippets[1])) {
 										RunAgain=true;
 									} else {
@@ -267,7 +267,7 @@
 									PasswdFieldType=1;
 								} else if(Passwd) {
 									PasswdFieldType=2;
-								} else if(Hash&&Hash==gp2_generate_hash(PasswdField.value)) {
+								} else if(Hash&&Hash==IlIaMPKcenPecPanMMOKddOMcOIaIjfb_generate_hash(PasswdField.value)) {
 									HashVerified=true;
 									Passwd=PasswdField.value;
 									PasswdFieldType=1;
@@ -283,10 +283,10 @@
 							PasswdField.style.background=FieldFoundStyle;
 							PasswdFieldBlocked=(PasswdFieldRelocate&&(PasswdFieldBlocked||(ScreenSize[0]-PasswdFieldPosition[0]+ScrollX-150<225&&ScrollY<PasswdFieldPosition[1]+50)))?true:false;
 
-							gp2_detach_method(PasswdField,'keydown',gp2_react);
-							gp2_detach_method(PasswdField,'change',gp2_react);
-							gp2_detach_method(PasswdField,'dblclick',gp2_populate);
-							gp2_detach_method(PasswdField,'dblclick',gp2_use_as_master);
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method(PasswdField,'keydown',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_react);
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method(PasswdField,'change',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_react);
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method(PasswdField,'dblclick',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_populate);
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method(PasswdField,'dblclick',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_use_as_master);
 
 						}
 					}
@@ -295,14 +295,14 @@
 		}
 
 		var TitleBar=
-			gp2_make(
+			IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 				'div',
 				[],
 				[['margin','0'],['padding','7px 5px 5px 7px'],['width','auto'],['background','#333'],['color','#fff'],FontStyle,['fontWeight','bold'],['cursor','move']],
-				[['mousedown',gp2_drag_start]],
+				[['mousedown',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_drag_start]],
 				[
 					Target.createTextNode('SuperGenPass 2.01'+String.fromCharCode(160)+' '+String.fromCharCode(160)+' '),
-					gp2_make(
+					IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 						'a',
 						[['href','http://www.supergenpass.com/']],
 						FontStyleToolbarLink,
@@ -310,11 +310,11 @@
 						[Target.createTextNode(Snippets[14])]
 					),
 					Target.createTextNode(String.fromCharCode(160)+' '),
-					gp2_make(
+					IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 						'a',
 						[['href','#']],
 						FontStyleToolbarLink,
-						[['click',gp2_close]],
+						[['click',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_close]],
 						[Target.createTextNode(Snippets[15])]
 					)
 				]
@@ -322,14 +322,14 @@
 
 		if(Passwd) {
 
-			Domain=(Domain)?gp2_process_uri(Domain,DisableTLD):gp2_process_uri(Target.location.href,DisableTLD);
-			Len=gp2_validate_length(Len);
-			GenPasswd=gp2_generate_passwd(Passwd+Salt+':'+Domain,Len);
+			Domain=(Domain)?IlIaMPKcenPecPanMMOKddOMcOIaIjfb_process_uri(Domain,DisableTLD):IlIaMPKcenPecPanMMOKddOMcOIaIjfb_process_uri(Target.location.href,DisableTLD);
+			Len=IlIaMPKcenPecPanMMOKddOMcOIaIjfb_validate_length(Len);
+			GenPasswd=IlIaMPKcenPecPanMMOKddOMcOIaIjfb_generate_passwd(Passwd+Salt+':'+Domain,Len);
 
 			if(Hash) {
-				HashVerified=(HashVerified||Hash==gp2_generate_hash(Passwd))?1:0;
+				HashVerified=(HashVerified||Hash==IlIaMPKcenPecPanMMOKddOMcOIaIjfb_generate_hash(Passwd))?1:0;
 				HashMessage=(HashVerified)?Snippets[5]:Snippets[6];
-				HashMessage=gp2_make('span',[],[['color',HashStyle[HashVerified][0]],['background',HashStyle[HashVerified][1]],FontStyleSmall,['fontWeight','bold']],[],[Target.createTextNode(String.fromCharCode(160)+HashMessage+String.fromCharCode(160))]);
+				HashMessage=IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make('span',[],[['color',HashStyle[HashVerified][0]],['background',HashStyle[HashVerified][1]],FontStyleSmall,['fontWeight','bold']],[],[Target.createTextNode(String.fromCharCode(160)+HashMessage+String.fromCharCode(160))]);
 			} else {
 				HashVerified=true;
 				HashMessage=Target.createTextNode('');
@@ -343,14 +343,14 @@
 				var PasswdTarget=PasswdFields[i][0];
 
 				if(PasswdFields[i][1]==2||(PasswdFields[i][1]==0&&PrevPasswd)||!(HashVerified)) {
-					gp2_attach_method(PasswdTarget,'dblclick',gp2_populate);
+					IlIaMPKcenPecPanMMOKddOMcOIaIjfb_attach_method(PasswdTarget,'dblclick',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_populate);
 					Unpopulated++;
 				} else {
 					PasswdTarget.style.background=FieldPopStyle;
 					PasswdTarget.value=GenPasswd;
 					PasswdTarget.focus();
-					gp2_attach_method(PasswdTarget,'keydown',gp2_react);
-					gp2_attach_method(PasswdTarget,'change',gp2_react);
+					IlIaMPKcenPecPanMMOKddOMcOIaIjfb_attach_method(PasswdTarget,'keydown',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_react);
+					IlIaMPKcenPecPanMMOKddOMcOIaIjfb_attach_method(PasswdTarget,'change',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_react);
 					Populated++;
 				}
 
@@ -367,152 +367,152 @@
 			var Content =
 				[
 					TitleBar,
-					gp2_make(
+					IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 						'div',
 						[],
 						[['margin','0'],['padding','8px 5px 14px 8px'],['width','auto'],['color','#000'],FontStyle],
 						[],
 						[
-							gp2_make(
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 								'div',
 								[],
 								[FontStyle,['fontWeight','bold']],
 								[],
 								[Target.createTextNode(Snippets[3])]
 							),
-							gp2_make(
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 								'div',
-								[['id','gp2_populate_text']],
+								[['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_populate_text']],
 								[['display',PopulateTextStyle],['margin','3px 0 0 0'],['color','#666'],FontStyleSmall],
 								[],
 								[Target.createTextNode(Snippets[13])]
 							),
-							gp2_make(
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 								'div',
-								[['id','gp2_offer_pass']],
+								[['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_offer_pass']],
 								RevealStyle.concat([['background',GeneratedStyle],['borderColor','#666']]),
 								[],
 								[Target.createTextNode(PassMask.substring(0,Len))]
 							),
-							gp2_make(
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 								'div',
-								[['id','gp2_show_pass']],
+								[['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_show_pass']],
 								RevealStyle.concat([['display','none'],['background',GeneratedStyle],['borderColor','#666']]),
 								[],
 								[Target.createTextNode(GenPasswd)]
 							),
-							gp2_make(
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 								'a',
 								[['href','#']],
 								FontStyleLink,
-								[['click',gp2_reveal_pass]],
+								[['click',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_reveal_pass]],
 								[Target.createTextNode(Snippets[16])]
 							)
 						]
 					),
-					gp2_make(
+					IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 						'div',
 						[],
 						[['margin','0'],['padding','0 5px 10px 8px'],['width','auto'],['color','#000'],FontStyle],
 						[],
 						[
-							gp2_make(
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 								'div',
 								[],
 								[FontStyle,['fontWeight','bold']],
 								[],
 								[Target.createTextNode(Snippets[4])]
 							),
-							gp2_make(
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 								'div',
-								[['id','gp2_offer_master_pass']],
+								[['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_offer_master_pass']],
 								RevealStyle.concat([['background','#fff'],['borderColor','#666']]),
 								[],
 								[Target.createTextNode(PassMask.substring(0,Passwd.length))]
 							),
-							gp2_make(
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 								'div',
-								[['id','gp2_show_master_pass']],
+								[['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_show_master_pass']],
 								RevealStyle.concat([['display','none'],['background','#fff'],['borderColor','#666']]),
 								[],
 								[Target.createTextNode(Passwd)]
 							),
-							gp2_make(
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 								'a',
 								[['href','#']],
 								FontStyleLink,
-								[['click',gp2_reveal_master_pass]],
+								[['click',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_reveal_master_pass]],
 								[Target.createTextNode(Snippets[16])]
 							),
 							Target.createTextNode(String.fromCharCode(160)+' '),
 							HashMessage
 						]
 					),
-					gp2_make(
+					IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 						'div',
 						[],
 						[['margin','0'],['padding','8px'],['width','auto'],['color','#333'],['background','#eee'],FontStyle,['fontWeight','bold']],
 						[],
 						[
 							Target.createTextNode(Snippets[7]+' '+String.fromCharCode(160)),
-							gp2_make(
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 								'a',
-								[['href','#'],['id','gp2_expand_link']],
+								[['href','#'],['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_expand_link']],
 								FontStyleLink,
-								[['click',gp2_expand]],
+								[['click',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_expand]],
 								[Target.createTextNode(Snippets[16])]
 							),
-							gp2_make(
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 								'a',
-								[['href','#'],['id','gp2_contract_link']],
+								[['href','#'],['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_contract_link']],
 								FontStyleLink.concat([['display','none']]),
-								[['click',gp2_contract]],
+								[['click',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_contract]],
 								[Target.createTextNode(Snippets[16])]
 							)
 						]
 					),
-					gp2_make(
+					IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 						'div',
-						[['id','gp2_advanced_box']],
+						[['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_advanced_box']],
 						[['margin','0'],['padding','0 5px 5px 8px'],['width','auto'],['color','#000'],FontStyle,['display','none'],['background','#eee']],
 						[],
 						[
-							gp2_make(
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 								'form',
-								[['name','gp2_advanced'],['method','post'],['action','http://localhost:9/'],['autocomplete','off']],
+								[['name','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_advanced'],['method','post'],['action','http://localhost:9/'],['autocomplete','off']],
 								[['margin','0'],['padding','0']],
-								[['submit',gp2_retry_advanced]],
+								[['submit',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_advanced]],
 								[
 									Target.createTextNode(Snippets[8]),
 									Target.createElement('br'),
-									gp2_make(
+									IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 										'input',
-										[['type','password'],['id','gp2_advanced_master_passwd'],['value',Passwd]],
+										[['type','password'],['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_advanced_master_passwd'],['value',Passwd]],
 										[['margin','3px 0 10px 0'],['width','150px'],FontStyleInput],
-										[['keypress',gp2_retry_advanced_listen]],
+										[['keypress',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_advanced_listen]],
 										[]
 									),
 									Target.createElement('br'),
 									Target.createTextNode(Snippets[9]),
 									Target.createElement('br'),
-									gp2_make(
+									IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 										'input',
-										[['type','text'],['id','gp2_advanced_domain'],['size','15'],['value',Domain]],
+										[['type','text'],['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_advanced_domain'],['size','15'],['value',Domain]],
 										[['margin','3px 0 2px 0'],['width','150px'],FontStyleInput],
-										[['keypress',gp2_retry_advanced_listen]],
+										[['keypress',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_advanced_listen]],
 										[]
 									),
 									Target.createElement('br'),
-									gp2_make(
+									IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 										'input',
-										[['type','checkbox'],['id','gp2_advanced_domain_isolator'],[DisableTLD,'checked']],
+										[['type','checkbox'],['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_advanced_domain_isolator'],[DisableTLD,'checked']],
 										[['margin','5px 0 10px 0'],['padding','0']],
-										[['keypress',gp2_retry_advanced_listen]],
+										[['keypress',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_advanced_listen]],
 										[]
 									),
-									gp2_make(
+									IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 										'label',
-										[['for','gp2_advanced_domain_isolation']],
+										[['for','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_advanced_domain_isolation']],
 										[['margin','0'],['padding','0'],FontStyleSmall],
 										[],
 										[Target.createTextNode(' '+Snippets[10])]
@@ -520,19 +520,19 @@
 									Target.createElement('br'),
 									Target.createTextNode(Snippets[11]),
 									Target.createElement('br'),
-									gp2_make(
+									IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 										'input',
-										[['type','text'],['id','gp2_advanced_len'],['size','4'],['value',Len]],
+										[['type','text'],['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_advanced_len'],['size','4'],['value',Len]],
 										[['margin','3px 0 10px 0'],['width','40px'],FontStyleInput],
-										[['keypress',gp2_retry_advanced_listen]],
+										[['keypress',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_advanced_listen]],
 										[]
 									),
 									Target.createElement('br'),
-									gp2_make(
+									IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 										'input',
 										[['type','button'],['value',Snippets[12]]],
 										[['margin','0 0 5px 0']],
-										[['click',gp2_retry_advanced]],
+										[['click',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_advanced]],
 										[]
 									)
 								]
@@ -545,39 +545,39 @@
 
 			for(var i=0; i<PasswdFields.length; i++) {
 				if(PasswdFields[i][1]==2) {
-					gp2_attach_method(PasswdFields[i][0],'dblclick',gp2_use_as_master);
+					IlIaMPKcenPecPanMMOKddOMcOIaIjfb_attach_method(PasswdFields[i][0],'dblclick',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_use_as_master);
 				}
 			}
 
 			var Content = 
 				[
 					TitleBar,
-					gp2_make(
+					IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 						'div',
 						[],
 						[['margin','0'],['padding','8px'],['width','auto'],['color','#000'],FontStyle],
 						[],
 						[
-							gp2_make(
+							IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 								'form',
-								[['name','gp2_retry'],['method','post'],['action','http://localhost:9/'],['autocomplete','off']],
+								[['name','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry'],['method','post'],['action','http://localhost:9/'],['autocomplete','off']],
 								[['margin','0'],['padding','0']],
-								[['submit',gp2_retry_passwd]],
+								[['submit',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_passwd]],
 								[
 									Target.createTextNode(Snippets[2]),
 									Target.createElement('br'),
-									gp2_make(
+									IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 										'input',
-										[['type','password'],['id','gp2_master'],['size','15'],['value','']],
+										[['type','password'],['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_master'],['size','15'],['value','']],
 										[['margin','8px 5px 0 0'],['width','125px'],FontStyleInput],
-										[['keypress',gp2_retry_passwd_listen]],
+										[['keypress',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_passwd_listen]],
 										[]
 									),
-									gp2_make(
+									IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 										'input',
 										[['type','button'],['value',Snippets[12]]],
 										[],
-										[['click',gp2_retry_passwd]],
+										[['click',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_passwd]],
 										[]
 									)
 								]
@@ -586,20 +586,20 @@
 					)
 				];
 
-			gp2_attach_method(TargetWindow,'unload',gp2_close);
+			IlIaMPKcenPecPanMMOKddOMcOIaIjfb_attach_method(TargetWindow,'unload',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_close);
 
 		}
 
 		BoxPositionX=(PasswdFieldBlocked||BoxPosition[0]=='left')?['left','0px']:['right',(BoxPosition[0]-ScrollX)+'px'];
 
 		var ParentDiv =
-			gp2_make(
+			IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 				'div',
-				[['id','gp2_pass_box']],
+				[['id','IlIaMPKcenPecPanMMOKddOMcOIaIjfb_pass_box']],
 				[['zIndex','99999'],['position','absolute'],['top',(BoxPosition[1]+ScrollY)+'px'],BoxPositionX,['width',Snippets[17]],['margin','0'],['padding','0'],['background','#fff'],['borderStyle','solid'],['borderColor','#fff'],['borderWidth','8px'],['opacity','0.95'],['filter','alpha(opacity=95)']],
 				[],
 				[
-					gp2_make(
+					IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(
 						'div',
 						[],
 						[['margin','0'],['padding','0'],['borderStyle','solid'],['borderColor','#ccc'],['borderWidth','1px'],['textAlign','left']],
@@ -611,12 +611,12 @@
 
 		Target.body.appendChild(ParentDiv);
 
-		if(Target.getElementById('gp2_master')) {
-			Target.getElementById('gp2_master').focus()
+		if(Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_master')) {
+			Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_master').focus()
 		};
 
-		if(Target.getElementById('gp2_offer_pass')&&ChangeAlert) {
-			FlashTarget=Target.getElementById('gp2_offer_pass');
+		if(Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_offer_pass')&&ChangeAlert) {
+			FlashTarget=Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_offer_pass');
 			FlashTarget.style.color='#fff';
 			setTimeout("FlashTarget.style.color='#000'",100);
 			setTimeout("FlashTarget.style.color='#fff'",150);
@@ -625,18 +625,18 @@
 
 	}
 
-	function gp2_close(e) {
-		if(Target.getElementById('gp2_pass_box')) {
-			ScrollPosition=gp2_get_scroll_position();
-			BoxPosition=[0,parseInt(Target.getElementById('gp2_pass_box').style.top)];
-			BoxPosition[0]=(Target.getElementById('gp2_pass_box').style.right)?parseInt(Target.getElementById('gp2_pass_box').style.right):'left';
-			Target.body.removeChild(Target.getElementById('gp2_pass_box'));
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_close(e) {
+		if(Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_pass_box')) {
+			ScrollPosition=IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_scroll_position();
+			BoxPosition=[0,parseInt(Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_pass_box').style.top)];
+			BoxPosition[0]=(Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_pass_box').style.right)?parseInt(Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_pass_box').style.right):'left';
+			Target.body.removeChild(Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_pass_box'));
 		}
 		if(typeof(PasswdFields)!='undefined'){
 			for(var i=0;i<(PasswdFields.length);i++) {
-				gp2_detach_method(PasswdFields[i][0],'dblclick',gp2_populate);
-				gp2_detach_method(PasswdFields[i][0],'dblclick',gp2_use_as_master);
-				if(gp2_get_computed_style(PasswdFields[i][0],'background-image').replace(/\\/,'')=='url('+FieldFoundData+')') {
+				IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method(PasswdFields[i][0],'dblclick',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_populate);
+				IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method(PasswdFields[i][0],'dblclick',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_use_as_master);
+				if(IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_computed_style(PasswdFields[i][0],'background-image').replace(/\\/,'')=='url('+FieldFoundData+')') {
 					PasswdFields[i][0].style.background='#fff';
 				}
 					
@@ -650,121 +650,121 @@
 		return false;
 	}
 
-	function gp2_expand(e) {
-		Target.getElementById('gp2_expand_link').style.display='none';
-		Target.getElementById('gp2_contract_link').style.display='inline';
-		Target.getElementById('gp2_advanced_box').style.display='block';
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_expand(e) {
+		Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_expand_link').style.display='none';
+		Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_contract_link').style.display='inline';
+		Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_advanced_box').style.display='block';
 		e.preventDefault();
 		return false;
 	}
 
-	function gp2_contract(e) {
-		Target.getElementById('gp2_expand_link').style.display='inline';
-		Target.getElementById('gp2_contract_link').style.display='none';
-		Target.getElementById('gp2_advanced_box').style.display='none';
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_contract(e) {
+		Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_expand_link').style.display='inline';
+		Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_contract_link').style.display='none';
+		Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_advanced_box').style.display='none';
 		e.preventDefault();
 		return false;
 	}
 
-	function gp2_retry_passwd(e) {
-		var Passwd=Target.getElementById('gp2_master').value;
-		gp2_close(e);
-		gp2_genpass(escape(Passwd),0,Len,Hash,Salt,DisableTLD);
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_passwd(e) {
+		var Passwd=Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_master').value;
+		IlIaMPKcenPecPanMMOKddOMcOIaIjfb_close(e);
+		IlIaMPKcenPecPanMMOKddOMcOIaIjfb_genpass(escape(Passwd),0,Len,Hash,Salt,DisableTLD);
 		return false;
 	}
 
-	function gp2_retry_passwd_listen(e) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_passwd_listen(e) {
 		if(e.keyCode==13||e.keyCode==3) {
-			gp2_retry_passwd(e);
+			IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_passwd(e);
 		}
 		e.stopPropagation();
 	}
 
-	function gp2_retry_advanced(e) {
-		var Passwd=Target.getElementById('gp2_advanced_master_passwd').value;
-		var Domain=Target.getElementById('gp2_advanced_domain').value;
-		var DisableTLD=(Target.getElementById('gp2_advanced_domain_isolator').checked)?true:false;
-		var Len=Target.getElementById('gp2_advanced_len').value;
-		gp2_close(e);
-		gp2_genpass(escape(Passwd),Domain,Len,Hash,Salt,DisableTLD);
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_advanced(e) {
+		var Passwd=Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_advanced_master_passwd').value;
+		var Domain=Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_advanced_domain').value;
+		var DisableTLD=(Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_advanced_domain_isolator').checked)?true:false;
+		var Len=Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_advanced_len').value;
+		IlIaMPKcenPecPanMMOKddOMcOIaIjfb_close(e);
+		IlIaMPKcenPecPanMMOKddOMcOIaIjfb_genpass(escape(Passwd),Domain,Len,Hash,Salt,DisableTLD);
 		return false;
 	}
 
-	function gp2_retry_advanced_listen(e) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_advanced_listen(e) {
 		if(e.keyCode==13||e.keyCode==3) {
-			gp2_retry_advanced(e);
+			IlIaMPKcenPecPanMMOKddOMcOIaIjfb_retry_advanced(e);
 		}
 		e.stopPropagation();
 	}
 
-	function gp2_reveal_pass(e) {
-		if(Target.getElementById('gp2_offer_pass').style.display=='none') {
-			Target.getElementById('gp2_show_pass').style.display='none';
-			Target.getElementById('gp2_offer_pass').style.display='block';
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_reveal_pass(e) {
+		if(Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_offer_pass').style.display=='none') {
+			Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_show_pass').style.display='none';
+			Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_offer_pass').style.display='block';
 		} else {
-			Target.getElementById('gp2_offer_pass').style.display='none';
-			Target.getElementById('gp2_show_pass').style.display='block';
+			Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_offer_pass').style.display='none';
+			Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_show_pass').style.display='block';
 		}
 		e.preventDefault();
 		return false;
 	}
 
-	function gp2_reveal_master_pass(e) {
-		if(Target.getElementById('gp2_offer_master_pass').style.display=='none') {
-			Target.getElementById('gp2_show_master_pass').style.display='none';
-			Target.getElementById('gp2_offer_master_pass').style.display='block';
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_reveal_master_pass(e) {
+		if(Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_offer_master_pass').style.display=='none') {
+			Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_show_master_pass').style.display='none';
+			Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_offer_master_pass').style.display='block';
 		} else {
-			Target.getElementById('gp2_offer_master_pass').style.display='none';
-			Target.getElementById('gp2_show_master_pass').style.display='block';
+			Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_offer_master_pass').style.display='none';
+			Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_show_master_pass').style.display='block';
 		}
 		e.preventDefault();
 		return false;
 	}
 
-	function gp2_populate(e) {
-		if(GenPasswd&&Target.getElementById('gp2_pass_box')) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_populate(e) {
+		if(GenPasswd&&Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_pass_box')) {
 			Populated++;
 			Unpopulated--;
 			this.value=GenPasswd;
 			this.style.background=FieldPopStyle;
-			gp2_attach_method(this,'keydown',gp2_react);
-			gp2_attach_method(this,'change',gp2_react);
-			gp2_detach_method(this,'dblclick',gp2_populate);
-			Target.getElementById('gp2_show_pass').style.background=FieldPopStyle;
-			Target.getElementById('gp2_offer_pass').style.background=FieldPopStyle;
-			if(Unpopulated===0&&Target.getElementById('gp2_populate_text')) {
-				Target.getElementById('gp2_populate_text').style.display='none';
+			IlIaMPKcenPecPanMMOKddOMcOIaIjfb_attach_method(this,'keydown',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_react);
+			IlIaMPKcenPecPanMMOKddOMcOIaIjfb_attach_method(this,'change',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_react);
+			IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method(this,'dblclick',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_populate);
+			Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_show_pass').style.background=FieldPopStyle;
+			Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_offer_pass').style.background=FieldPopStyle;
+			if(Unpopulated===0&&Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_populate_text')) {
+				Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_populate_text').style.display='none';
 			}
 		}
 		e.preventDefault();
 		return false;
 	}
 
-	function gp2_use_as_master(e) {
-		if(Target.getElementById('gp2_pass_box')) {
-			gp2_detach_method(this,'dblclick',gp2_use_as_master);
-			gp2_close(e);
-			gp2_genpass(this.value,0,Len,Hash,Salt,DisableTLD);
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_use_as_master(e) {
+		if(Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_pass_box')) {
+			IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method(this,'dblclick',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_use_as_master);
+			IlIaMPKcenPecPanMMOKddOMcOIaIjfb_close(e);
+			IlIaMPKcenPecPanMMOKddOMcOIaIjfb_genpass(this.value,0,Len,Hash,Salt,DisableTLD);
 		}
 		e.preventDefault();
 		return false;
 	}
 
-	function gp2_react(e) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_react(e) {
 		if(e.keyCode==8||e.keyCode==32||(e.keyCode>45&&e.keyCode<91)||(e.keyCode>95&&e.keyCode<112)||(e.keyCode>185&&e.keyCode<223)) {
-			gp2_detach_method(this,'keydown',gp2_react);
-			gp2_detach_method(this,'change',gp2_react);
+			IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method(this,'keydown',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_react);
+			IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method(this,'change',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_react);
 			Populated--;
 			Unpopulated++;
-			if(GenPasswd&&Target.getElementById('gp2_pass_box')) {
+			if(GenPasswd&&Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_pass_box')) {
 				if(Populated<1) {
-					Target.getElementById('gp2_show_pass').style.background='#fff';
-					Target.getElementById('gp2_offer_pass').style.background='#fff';
+					Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_show_pass').style.background='#fff';
+					Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_offer_pass').style.background='#fff';
 				}
-				if(Unpopulated&&Target.getElementById('gp2_populate_text')) {
-					Target.getElementById('gp2_populate_text').style.display='block';
+				if(Unpopulated&&Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_populate_text')) {
+					Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_populate_text').style.display='block';
 				}
-				gp2_attach_method(this,'dblclick',gp2_populate);
+				IlIaMPKcenPecPanMMOKddOMcOIaIjfb_attach_method(this,'dblclick',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_populate);
 				this.style.background=FieldFoundStyle;
 			} else {
 				this.style.background='#fff';
@@ -773,16 +773,16 @@
 		return true;
 	}
 
-	function gp2_make(Name,Attributes,Styles,Methods,Children) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_make(Name,Attributes,Styles,Methods,Children) {
 		var Element=Target.createElement(Name);
 		for(var i=0;i<Attributes.length;i++) {Element.setAttribute(Attributes[i][0],Attributes[i][1]);}
 		for(var i=0;i<Styles.length;i++) {eval('Element.style.'+Styles[i][0]+"='"+Styles[i][1]+"'");}
-		for(var i=0;i<Methods.length;i++) {gp2_attach_method(Element,Methods[i][0],Methods[i][1]);}
+		for(var i=0;i<Methods.length;i++) {IlIaMPKcenPecPanMMOKddOMcOIaIjfb_attach_method(Element,Methods[i][0],Methods[i][1]);}
 		for(var i=0;i<Children.length;i++) {Element.appendChild(Children[i]);}
 		return Element;
 	}
 
-	function gp2_attach_method(obj,type,fn) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_attach_method(obj,type,fn) {
 		var handler=
 			function(e) {
 				e=e||window.event;
@@ -800,7 +800,7 @@
 		handler.obj=obj;
 		handler.type=type;
 		handler.fn=fn;
-		gp2_detach_method.handlers.push(handler);
+		IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method.handlers.push(handler);
 		if(window.addEventListener) {
 			obj.addEventListener(type,handler,false);
 		} else if(window.attachEvent) {
@@ -809,9 +809,9 @@
 		return handler;
 	}
 
-	function gp2_detach_method(obj,type,fn) {
-		for(var i=0;i<gp2_detach_method.handlers.length;i++) {
-			var h=gp2_detach_method.handlers[i];
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method(obj,type,fn) {
+		for(var i=0;i<IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method.handlers.length;i++) {
+			var h=IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method.handlers[i];
 			if(h.obj==obj&&h.type==type&&h.fn==fn) {
 				if(obj.removeEventListener) {
 					obj.removeEventListener(h.type,h,false);
@@ -819,48 +819,48 @@
 				if(obj.detachEvent) {
 					obj.detachEvent('on'+h.type,h);
 				}
-				gp2_detach_method.handlers.splice(i,1);
+				IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method.handlers.splice(i,1);
 				return h;
 			}
 		}
 	}
 
-	gp2_detach_method.handlers=[];
+	IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method.handlers=[];
 
-	function gp2_drag_start(e) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_drag_start(e) {
 		DragBox=new Object();
-		var Cursor=gp2_get_cursor(e);
-		DragBox.Node=Target.getElementById('gp2_pass_box');
+		var Cursor=IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_cursor(e);
+		DragBox.Node=Target.getElementById('IlIaMPKcenPecPanMMOKddOMcOIaIjfb_pass_box');
 		if(!(DragBox.Node.style.right)) {
 			DragBox.Node.style.left='auto';
-			DragBox.Node.style.right=gp2_get_computed_style(DragBox.Node,'right');
+			DragBox.Node.style.right=IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_computed_style(DragBox.Node,'right');
 		}
 		DragBox.StartX=parseInt(DragBox.Node.style.right,10);
 		DragBox.StartY=parseInt(DragBox.Node.style.top,10);
 		DragBox.CursorX=Cursor[0];DragBox.CursorY=Cursor[1];
-		gp2_attach_method(Target,'mousemove',gp2_drag_go);
-		gp2_attach_method(Target,'mouseup',gp2_drag_stop);
+		IlIaMPKcenPecPanMMOKddOMcOIaIjfb_attach_method(Target,'mousemove',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_drag_go);
+		IlIaMPKcenPecPanMMOKddOMcOIaIjfb_attach_method(Target,'mouseup',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_drag_stop);
 		e.preventDefault();
 		e.stopPropagation();
 		return false;
 	}
 
-	function gp2_drag_go(e) {
-		var CursorMove=gp2_get_cursor(e);
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_drag_go(e) {
+		var CursorMove=IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_cursor(e);
 		DragBox.Node.style.right=(DragBox.StartX+(DragBox.CursorX-CursorMove[0]))+'px';
 		DragBox.Node.style.top=(DragBox.StartY+(CursorMove[1]-DragBox.CursorY))+'px';
 		e.preventDefault();
 		return false;
 	}
 
-	function gp2_drag_stop(e) {
-		gp2_detach_method(Target,'mousemove',gp2_drag_go);
-		gp2_detach_method(Target,'mouseup',gp2_drag_stop);
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_drag_stop(e) {
+		IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method(Target,'mousemove',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_drag_go);
+		IlIaMPKcenPecPanMMOKddOMcOIaIjfb_detach_method(Target,'mouseup',IlIaMPKcenPecPanMMOKddOMcOIaIjfb_drag_stop);
 		e.preventDefault();
 		return false;
 	}
 
-	function gp2_get_cursor(e) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_cursor(e) {
 		var x=0;
 		var y=0;
 		if(e.pageX||e.pageY) {
@@ -873,7 +873,7 @@
 		return [x,y];
 	}
 
-	function gp2_get_window_size() {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_window_size() {
 		var x=0;
 		var y=0;
 		if(typeof(TargetWindow.innerWidth!='undefined')) {
@@ -889,7 +889,7 @@
 		return [x,y];
 	}
 
-	function gp2_get_scroll_position() {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_scroll_position() {
 		var x=0;
 		var y=0;
 		if(typeof(TargetWindow.pageXOffset)=='number'||typeof(TargetWindow.pageYOffset)=='number') {
@@ -905,7 +905,7 @@
 		return [x,y];
 	}
 
-	function gp2_get_object_position(obj) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_object_position(obj) {
 		var x=0;
 		var y=0;
 		if(obj.offsetParent) {
@@ -924,7 +924,7 @@
 		return [x,y];
 	}
 
-	function gp2_get_computed_style(obj,style) {
+	function IlIaMPKcenPecPanMMOKddOMcOIaIjfb_get_computed_style(obj,style) {
 		var styleVal='';
 		if(document.defaultView&&document.defaultView.getComputedStyle) {
 			styleVal=document.defaultView.getComputedStyle(obj,'').getPropertyValue(style);
@@ -1150,7 +1150,7 @@
 
 	if(Target&&TargetWindow) {
 
-		var Request=document.getElementById('fs_gp2').src.split('#');
+		var Request=document.getElementById('fs_IlIaMPKcenPecPanMMOKddOMcOIaIjfb').src.split('#');
 		var Params=Request[1].split(',');
 		var Lang=(Request[0].indexOf('?'))?Request[0].split('?')[1]:'en';
 
@@ -1171,7 +1171,7 @@
 			Snippets=SnippetsDB[0][1];
 		}
 
-		gp2_genpass(Params[0],Params[1],Params[2],Params[3],Params[4],Params[5]);
+		IlIaMPKcenPecPanMMOKddOMcOIaIjfb_genpass(Params[0],Params[1],Params[2],Params[3],Params[4],Params[5]);
 		delete Request;
 		delete Params;
 
